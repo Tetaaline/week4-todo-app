@@ -1,0 +1,147 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f6f0">
+  <title>StudyFlow — Make space for what matters</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="#" class="brand">studyflow<span>.</span></a>
+      <p class="brand-caption">A little progress, every day.</p>
+
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="#tasks" class="nav-link active"> <span>○</span> My tasks</a>
+        <a href="#overview" class="nav-link"><span>▦</span> Overview</a>
+        <a href="#upcoming" class="nav-link"><span>↗</span> Reflection</a>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="note-mark">✳</span>
+        <p>Slow down.<br>Focus on what matters.<br>Trust your progress.</p>
+      </div>
+
+      <p class="sidebar-footer">MADE FOR GROWTH</p>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="welcome">
+          <p class="eyebrow">YOUR SPACE TO FOCUS</p>
+          <h1>Make room for <em>great things.</em></h1>
+          <p class="intro">A clear mind starts with a clear plan. Let's make today count.</p>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle" type="button">
+          ◐ <span>Dark mode</span>
+        </button>
+      </header>
+
+      <section id="overview" class="stats-grid" aria-label="Task overview">
+        <article class="stat-card">
+          <p class="stat-label">ALL TASKS <span>↗</span></p>
+          <p id="total-count" class="stat-number">0</p>
+          <p class="stat-caption">Everything on your list</p>
+        </article>
+
+        <article class="stat-card completed-card">
+          <p class="stat-label">COMPLETED <span>✳</span></p>
+          <p id="completed-count" class="stat-number">0</p>
+          <p class="stat-caption">Small wins add up</p>
+        </article>
+
+        <article class="stat-card remaining-card">
+          <p class="stat-label">REMAINING <span>○</span></p>
+          <p id="remaining-count" class="stat-number">0</p>
+          <p class="stat-caption">One step at a time</p>
+        </article>
+      </section>
+
+      <section id="tasks" class="tasks-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR DAILY PRACTICE</p>
+            <h2>The to-do list<span>.</span></h2>
+          </div>
+          <p class="today-label">A fresh start, every day.</p>
+        </div>
+
+        <form id="task-form" class="task-form">
+          <label for="task-input" class="visually-hidden">Enter a task</label>
+          <span class="input-symbol">＋</span>
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            maxlength="100"
+            placeholder="What would you like to accomplish?"
+            required
+          >
+          <button type="submit" class="add-button">Add task <span>↗</span></button>
+        </form>
+
+        <p id="form-error" class="form-error" role="alert"></p>
+
+        <div class="task-toolbar">
+          <div id="task-filters" class="filters" aria-label="Filter tasks">
+            <button type="button" data-filter="all" aria-pressed="true" class="filter-button selected">All tasks</button>
+            <button type="button" data-filter="active" aria-pressed="false" class="filter-button">In progress</button>
+            <button type="button" data-filter="completed" aria-pressed="false" class="filter-button">Completed</button>
+          </div>
+          <p id="tasks-left" class="tasks-left" aria-live="polite">0 tasks left</p>
+        </div>
+
+        <ul id="task-list" class="task-list"></ul>
+
+        <div id="empty-state" class="empty-state">
+          <span class="empty-icon">✳</span>
+          <h3>Nothing on your list. Yet.</h3>
+          <p>Start with one small thing you'd like to get done.</p>
+        </div>
+
+        <div class="progress-section">
+          <div class="progress-copy">
+            <span>YOUR PROGRESS</span>
+            <span id="progress-label">0% complete</span>
+          </div>
+          <div
+            id="progress-bar"
+            class="progress-track"
+            role="progressbar"
+            aria-label="Task completion progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          >
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="list-footer">
+          <p>Consistency over perfection.</p>
+          <button id="clear-completed" type="button" class="clear-button">Clear completed ↗</button>
+        </div>
+      </section>
+
+      <section id="upcoming" class="reflection-card">
+        <div class="reflection-symbol">✳</div>
+        <div>
+          <p class="eyebrow">A GENTLE REMINDER</p>
+          <h2>You don't have to do it all today.</h2>
+          <p>Give your attention to what matters most. Progress is progress, no matter how small.</p>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <span>STUDYFLOW © 2026</span>
+        <span>Made with intention <span class="footer-mark">✳</span></span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
